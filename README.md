@@ -27,7 +27,7 @@ export OPENAI_API_KEY="sk-..."     # never hardcode this in any script
 
 ```bash
 pip install langfuse openai
-python 01_upload_dataset.py
+python dataset.py
 ```
 
 Re-run this any time you add a new test case (e.g. after a false alert from
@@ -37,7 +37,7 @@ correct label, then re-upload).
 ## 4. Run the evaluation gate
 
 ```bash
-python 02_run_experiment.py "chatbot-v1-baseline"
+python script.py "chatbot-v1-baseline"
 ```
 
 Run it again with a new name whenever you change `CHATBOT_SYSTEM_PROMPT` or
@@ -66,7 +66,7 @@ multi-reviewer assignment - just work the queue directly.
 
 ## Notes
 
-- `02_run_experiment.py` currently re-runs every test case against a live
+- `script.py` currently re-runs every test case against a live
   API on every call, which costs real API tokens each time. Fine for a POC
   of a few dozen-to-hundred cases; if the ground-truth set grows into the
   thousands, consider caching chatbot responses the way the earlier

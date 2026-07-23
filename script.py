@@ -1,7 +1,10 @@
 import json
 import sys
+from dotenv import load_dotenv
 from langfuse import get_client, Evaluation
 from langfuse.openai import OpenAI  # drop-in OpenAI client, auto-traced by Langfuse
+
+load_dotenv()
 
 # --------------------- CONFIG (from AI_Chatbot_Response_Validation_POC) ---------------------
 DATASET_NAME = "chatbot-validation-v1"
