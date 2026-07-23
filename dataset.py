@@ -13,7 +13,10 @@ Environment variables (self-hosted Langfuse, e.g. via Docker Compose):
 """
 
 import json
+from dotenv import load_dotenv
 from langfuse import get_client
+
+load_dotenv()
 
 GROUND_TRUTH_PATH = "ground_truth.json"
 DATASET_NAME = "chatbot-validation-v1"
